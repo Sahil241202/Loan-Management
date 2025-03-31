@@ -36,7 +36,7 @@ app.get("/", (req, res) => {
 
 cron.schedule("*/15 * * * *", async () => {
   try {
-    const response = await axios.get("https://credit-sea-loan-management.onrender.com");
+    const response = await axios.get("https://loan-management-r6it.onrender.com");
     console.log("Cron job executed: ", response.data);
   } catch (error) {
     console.error("Error in cron job request:");
