@@ -17,12 +17,16 @@ dotenv.config();
 
 const app = express();
 
-// Middleware
 app.use(cors({
-  origin: "https://loan-management-blush.vercel.app/", // Replace with your frontend URL
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  credentials: true, // Allows cookies if needed
+  origin: "https://loan-management-blush.vercel.app", // Your frontend URL
+  methods: "GET,POST,PUT,DELETE,PATCH,OPTIONS",
+  allowedHeaders: "Content-Type,Authorization",
+  credentials: true, // Allows cookies, if used
 }));
+
+// Ensure preflight requests (OPTIONS method) are handled correctly
+app.options("*", cors());
+
 
 app.use(express.json());
 
