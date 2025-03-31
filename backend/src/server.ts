@@ -22,11 +22,11 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-app.use("auth", authRoutes);
-app.use("applications", applicationRoutes);
-app.use("verifier", verifierRoutes);
-app.use("admin", adminRoutes);
-app.use("loan", loanRoutes);
+app.use("/auth", authRoutes);
+app.use("/applications", applicationRoutes);
+app.use("/verifier", verifierRoutes);
+app.use("/admin", adminRoutes);
+app.use("/loan", loanRoutes);
 
 
 // Root Route
